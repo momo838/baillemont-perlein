@@ -70,4 +70,42 @@ public class BaillemontPerleinMedevTest {
         assertEquals(Pion.BLANC, jeu.getJoueur2().getCouleur());
         assertEquals(jeu.getJoueur1(), jeu.getJoueur_actuel());
     }
+    
+    @Test
+    public void testChangementDeJoueur() {
+        BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
+        // Simulez un mouvement valide et vérifiez le changement de joueur
+        jeu.getPlateau().jouerMouvement(3, 4, Pion.NOIR); // Joueur 1 joue
+        assertEquals(jeu.getJoueur2(), jeu.getJoueur_actuel()); // Le joueur actuel doit être Joueur 2
+    }
+    
+    @Test
+    public void testAffichageResultat() {
+        BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
+        // Simulez des scores et vérifiez l'affichage
+        jeu.getPlateau().jouerMouvement(3, 4, Pion.NOIR);
+        jeu.getPlateau().jouerMouvement(4, 5, Pion.BLANC);
+        jeu.getPlateau().jouerMouvement(5, 4, Pion.NOIR);
+        jeu.getPlateau().jouerMouvement(4, 3, Pion.BLANC);
+
+        // Vérifiez que les scores sont corrects
+        int scoreJoueur1 = jeu.getPlateau().compterPions(Pion.NOIR);
+        int scoreJoueur2 = jeu.getPlateau().compterPions(Pion.BLANC);
+        assertEquals(2, scoreJoueur1);
+        assertEquals(2, scoreJoueur2);
+    }
+    
+    @Test
+    public void testPartieTerminee() {
+        BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
+        // Simulez une partie terminée
+        jeu.getPlateau().jouerMouvement(3, 4, Pion.NOIR);
+        jeu.getPlateau().jouerMouvement(4, 5, Pion.BLANC);
+        jeu.getPlateau().jouerMouvement(5, 4, Pion.NOIR);
+        jeu.getPlateau().jouerMouvement(4, 3, Pion.BLANC);
+        
+        // Simulez que les deux joueurs ne peuvent plus jouer
+        assertFalse(jeu.getPlateau().peutJouer(Pion.NOIR));
+        assertFalse(jeu.getPlateau().peutJouer(Pion.BLANC));
+    }
 }
