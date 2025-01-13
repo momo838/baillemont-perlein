@@ -10,29 +10,54 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 /**
  *
- * @author ASUS
+ * @author morga
  */
 public class BaillemontPerleinMedevTest {
-
-    @Test
-    void testMain() {
-        // Capture la sortie standard
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-        // Appeler la méthode main
-        BaillemontPerleinMedev.main(null);
-
-        // Récupère la sortie et vérifie qu'elle est correcte
-        String output = outputStream.toString().trim(); // Supprime les espaces inutiles
-        assertEquals("Hello World!", output);
-
-        // Optionnel : restaurer la sortie standard après le test
-        System.setOut(System.out);
+    
+    public BaillemontPerleinMedevTest() {
     }
+    
+    @BeforeAll
+    public static void setUpClass() {
+    }
+    
+    @AfterAll
+    public static void tearDownClass() {
+    }
+    
+    @BeforeEach
+    public void setUp() {
+    }
+    
+    @AfterEach
+    public void tearDown() {
+    }
+
+    /**
+     * Test of jouer method, of class BaillemontPerleinMedev.
+     */
+    @Test
+    public void testJouer() {
+        System.out.println("jouer");
+        BaillemontPerleinMedev instance = new BaillemontPerleinMedev();
+        instance.jouer();
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of main method, of class BaillemontPerleinMedev.
+     */
+    @Test
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        BaillemontPerleinMedev.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
 }
