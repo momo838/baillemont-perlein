@@ -36,4 +36,10 @@ public class PionTest {
     public void tearDown() {
     }
     
+    @Test
+    public void testEnumPion() {
+        assertEquals(Pion.NOIR, Pion.valueOf("NOIR"));
+        assertEquals(Pion.BLANC, Pion.valueOf("BLANC"));
+        assertEquals(Pion.VIDE, Pion.valueOf("VIDE"));
+    }
 }
