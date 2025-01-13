@@ -56,4 +56,22 @@ public class Plateau {
             System.out.println();
         }
     }
+
+    public Pion[][] getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(Pion[][] plateau) {
+        this.plateau = plateau;
+    }
+    
+    /**
+     * Recupère le pion de la ligne et la colonne spécifiées.
+     * @param ligne
+     * @param colonne
+     * @return 
+     */
+    public Pion getPion(int ligne, int colonne) {
+        return plateau[ligne][colonne];
+}
 }
