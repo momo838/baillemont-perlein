@@ -7,6 +7,7 @@ package org.centrale.projet.medev.baillemont.perlein.medev;
 /**
  *
  * @author morga
+ * Classe Plateau qui représente le plateau d'Othello. Il utilise des pions de la classe Pion.
  */
 public class Plateau {
     private Pion[][] plateau;
@@ -34,7 +35,7 @@ public class Plateau {
     }
     
     /**
-     * Fonction d'affichage texte du plateau
+     * Fonction d'affichage texte du plateau.
      */
     public void afficher() {
         System.out.print("  a b c d e f g h\n");
