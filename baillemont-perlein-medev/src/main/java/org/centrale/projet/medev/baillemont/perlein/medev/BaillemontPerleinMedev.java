@@ -30,11 +30,11 @@ public class BaillemontPerleinMedev {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             plateau.afficher();
-            System.out.println(joueur_actuel.getNom() + "Entrer le mouvement (ex: e5) : ");
+            System.out.println(joueur_actuel.getNom() + " Entrer le mouvement (ex: e5) : ");
             String mouvement = scanner.nextLine();
 
             // vérif validité du mouvement
-            if (mouvement.length() < 2) {
+            if (mouvement.length() < 2 || mouvement.length() > 2) {
                 System.out.println("Non valide");
                 continue;
             }
@@ -66,7 +66,7 @@ public class BaillemontPerleinMedev {
 
             // vérif si partie finie ou non
             if (!plateau.peutJouer(joueur1.getCouleur()) && !plateau.peutJouer(joueur2.getCouleur())) {
-                System.out.println("Partie terminée. QUi a gagné ?!?!");
+                System.out.println("Partie terminée. Qui a gagné ?!?!");
                 break;
             }
         }
