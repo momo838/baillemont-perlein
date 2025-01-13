@@ -10,29 +10,52 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 /**
  *
- * @author ASUS
+ * @author morga
  */
 public class BaillemontPerleinMedevTest {
-
+    
+    public BaillemontPerleinMedevTest() {
+    }
+    
+    @BeforeAll
+    public static void setUpClass() {
+    }
+    
+    @AfterAll
+    public static void tearDownClass() {
+    }
+    
+    @BeforeEach
+    public void setUp() {
+    }
+    
+    @AfterEach
+    public void tearDown() {
+    }
+    
     @Test
-    void testMain() {
-        // Capture la sortie standard
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
+    public void testInitialisation() {
+        BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
+        // Vérifiez que le plateau est initialisé correctement
+        assertNotNull(jeu);
+        assertNotNull(jeu.getPlateau());
+        assertEquals(Pion.NOIR, jeu.getJoueur1().getCouleur());
+        assertEquals(Pion.BLANC, jeu.getJoueur2().getCouleur());
+        assertEquals(jeu.getJoueur1(), jeu.getJoueur_actuel());
+    }
 
-        // Appeler la méthode main
-        BaillemontPerleinMedev.main(null);
+    
+    @Test
+    public void testAffichageResultat() {
+        BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
 
-        // Récupère la sortie et vérifie qu'elle est correcte
-        String output = outputStream.toString().trim(); // Supprime les espaces inutiles
-        assertEquals("Hello World!", output);
-
-        // Optionnel : restaurer la sortie standard après le test
-        System.setOut(System.out);
+        // Vérifiez que les scores sont corrects
+        int scoreJoueur1 = jeu.getPlateau().compterPions(Pion.NOIR);
+        int scoreJoueur2 = jeu.getPlateau().compterPions(Pion.BLANC);
+        assertEquals(2, scoreJoueur1);
+        assertEquals(2, scoreJoueur2);
     }
 }

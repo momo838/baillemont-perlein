@@ -97,4 +97,37 @@ public class BaillemontPerleinMedev {
         BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
         jeu.jouer();
     }
+
+    public Plateau getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(Plateau plateau) {
+        this.plateau = plateau;
+    }
+
+    public Joueur getJoueur1() {
+        return joueur1;
+    }
+
+    public void setJoueur1(Joueur joueur1) {
+        this.joueur1 = joueur1;
+    }
+
+    public Joueur getJoueur2() {
+        return joueur2;
+    }
+
+    public void setJoueur2(Joueur joueur2) {
+        this.joueur2 = joueur2;
+    }
+
+    public Joueur getJoueur_actuel() {
+        return joueur_actuel;
+    }
+
+    public void setJoueur_actuel(Joueur joueur_actuel) {
+        this.joueur_actuel = joueur_actuel;
+    }
+    
 }
