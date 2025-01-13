@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author morga
  */
 public class PlateauTest {
-    private Plateau plateau;
     public PlateauTest() {
     }
     
@@ -30,7 +29,6 @@ public class PlateauTest {
     
     @BeforeEach
     public void setUp() {
-        plateau = new Plateau();
     }
     
     @AfterEach
@@ -50,6 +48,7 @@ public class PlateauTest {
     @Test
     public void testInitialisationPlateau() {
         // Vérifiez que le plateau est initialisé correctement
+        Plateau plateau = new Plateau();
         assertEquals(Pion.BLANC, plateau.getPion(3, 3));
         assertEquals(Pion.NOIR, plateau.getPion(3, 4));
         assertEquals(Pion.NOIR, plateau.getPion(4, 3));
