@@ -9,5 +9,11 @@ package org.centrale.projet.medev.baillemont.perlein.medev;
  * @author morga
  */
 public class Plateau {
-    
+    private Pion[][] plateau;
+    private static final int TAILLE = 8;
+
+    public Plateau() {
+        plateau = new Pion[TAILLE][TAILLE];
+        //initialiserPlateau(); #TODO
+    }
 }
