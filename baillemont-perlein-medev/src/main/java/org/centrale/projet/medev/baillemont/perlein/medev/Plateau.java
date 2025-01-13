@@ -32,4 +32,28 @@ public class Plateau {
         plateau[4][3] = Pion.NOIR;
         plateau[4][4] = Pion.BLANC;
     }
+    
+    /**
+     * Fonction d'affichage texte du plateau
+     */
+    public void afficher() {
+        System.out.print("  a b c d e f g h\n");
+        for (int i = 0; i < TAILLE; i++) {
+            System.out.print((i + 1) + " ");
+            for (int j = 0; j < TAILLE; j++) {
+                switch (plateau[i][j]) {
+                    case NOIR:
+                        System.out.print("N ");
+                        break;
+                    case BLANC:
+                        System.out.print("B ");
+                        break;
+                    case VIDE:
+                        System.out.print(". ");
+                        break;
+                }
+            }
+            System.out.println();
+        }
+    }
 }
