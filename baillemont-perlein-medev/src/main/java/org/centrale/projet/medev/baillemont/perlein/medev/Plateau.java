@@ -118,5 +118,55 @@ public class Plateau {
 
         return valide;
     }
+    
+    /**
+     * Joue un mouvement du Joueur.
+     * @param ligne
+     * @param colonne
+     * @param couleur 
+     */
+    public void jouerMouvement(int ligne, int colonne, Pion couleur) {
+        if (!mouvementValide(ligne, colonne, couleur)) {
+            throw new IllegalArgumentException("Mouvement invalide");
+        }
+
+        plateau[ligne][colonne] = couleur; // Placer le pion
+
+        // Retourner les pions adverses
+        Pion couleurAdverse = (couleur == Pion.NOIR) ? Pion.BLANC : Pion.NOIR;
+
+        for (int dLigne = -1; dLigne <= 1; dLigne++) {
+            for (int dColonne = -1; dColonne <= 1; dColonne++) {
+                if (dLigne == 0 && dColonne == 0) continue; // Ignorer la direction (0,0)
+
+                int i = ligne + dLigne;
+                int j = colonne + dColonne;
+                boolean trouveAdverse = false;
+
+                // Vérifiez si on peut retourner des pions
+                while (i >= 0 && i < TAILLE && j >= 0 && j < TAILLE) {
+                    if (plateau[i][j] == couleurAdverse) {
+                        trouveAdverse = true; // On a trouvé un pion adverse
+                    } else if (plateau[i][j] == couleur) {
+                        if (trouveAdverse) {
+                            // On a trouvé un alignement valide, retourner les pions adverses
+                            int x = ligne + dLigne;
+                            int y = colonne + dColonne;
+                            while (x != i || y != j) {
+                                plateau[x][y] = couleur; // Retourner le pion
+                                x += dLigne;
+                                y += dColonne;
+                            }
+                        }
+                        break; // On sort de la boucle
+                    } else {
+                        break; // On a trouvé une case vide
+                    }
+                    i += dLigne;
+                    j += dColonne;
+                }
+            }
+        }
+    }
 }
 
