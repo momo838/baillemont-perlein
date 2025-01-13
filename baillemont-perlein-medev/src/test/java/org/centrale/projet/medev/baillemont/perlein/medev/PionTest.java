@@ -35,32 +35,5 @@ public class PionTest {
     @AfterEach
     public void tearDown() {
     }
-
-    /**
-     * Test of values method, of class Pion.
-     */
-    @Test
-    public void testValues() {
-        System.out.println("values");
-        Pion[] expResult = null;
-        Pion[] result = Pion.values();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of valueOf method, of class Pion.
-     */
-    @Test
-    public void testValueOf() {
-        System.out.println("valueOf");
-        String name = "";
-        Pion expResult = null;
-        Pion result = Pion.valueOf(name);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }

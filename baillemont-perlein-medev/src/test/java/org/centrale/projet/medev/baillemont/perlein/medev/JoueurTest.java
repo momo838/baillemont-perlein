@@ -42,12 +42,10 @@ public class JoueurTest {
     @Test
     public void testGetNom() {
         System.out.println("getNom");
-        Joueur instance = null;
-        String expResult = "";
+        Joueur instance = new Joueur("Hector", Pion.BLANC);
+        String expResult = "Hector";
         String result = instance.getNom();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -56,11 +54,12 @@ public class JoueurTest {
     @Test
     public void testSetNom() {
         System.out.println("setNom");
-        String nom = "";
-        Joueur instance = null;
+        String nom = "Morgane";
+        Joueur instance = new Joueur("Hector", Pion.BLANC);
         instance.setNom(nom);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String expResult = "Morgane";
+        String result = instance.getNom();
+        assertEquals(expResult, result);
     }
 
     /**
@@ -69,12 +68,10 @@ public class JoueurTest {
     @Test
     public void testGetCouleur() {
         System.out.println("getCouleur");
-        Joueur instance = null;
-        Pion expResult = null;
+        Joueur instance = new Joueur("Hector", Pion.BLANC);
+        Pion expResult = Pion.BLANC;
         Pion result = instance.getCouleur();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -83,11 +80,12 @@ public class JoueurTest {
     @Test
     public void testSetCouleur() {
         System.out.println("setCouleur");
-        Pion couleur = null;
-        Joueur instance = null;
+        Pion couleur = Pion.NOIR;
+        Joueur instance = new Joueur("Hector", Pion.BLANC);
         instance.setCouleur(couleur);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Pion expResult = Pion.NOIR;
+        Pion result = instance.getCouleur();
+        assertEquals(expResult, result);
     }
     
 }

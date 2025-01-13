@@ -44,8 +44,6 @@ public class PlateauTest {
         System.out.println("afficher");
         Plateau instance = new Plateau();
         instance.afficher();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

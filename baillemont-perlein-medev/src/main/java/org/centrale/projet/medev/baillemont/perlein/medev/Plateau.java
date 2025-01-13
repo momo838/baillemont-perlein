@@ -56,4 +56,14 @@ public class Plateau {
             System.out.println();
         }
     }
+
+    public Pion[][] getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(Pion[][] plateau) {
+        this.plateau = plateau;
+    }
+    
+    
 }
