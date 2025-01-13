@@ -8,6 +8,8 @@ import java.util.Scanner;
 /**
  *
  * @author morga
+ * Classe pour la gestion du jeu Othello.
+ *
  */
 public class BaillemontPerleinMedev {
 
@@ -22,7 +24,9 @@ public class BaillemontPerleinMedev {
         joueur2 = new Joueur("Joueur 2", Pion.BLANC);
         joueur_actuel = joueur1;
     }
-
+         /**
+          * Méthode de jeu avec interface texte.
+          */
         public void jouer() {
             
         //to do : dans plateau, implémenter mouvementValide, jouerMouvement et peutJouer
@@ -74,7 +78,10 @@ public class BaillemontPerleinMedev {
         afficherResultat() ;
         
         }
-    
+        
+    /**
+     * Affiche le score de chaque joueur après la fin du jeu.
+     */
     private void afficherResultat() {
         // Comptez les pions pour chaque joueur
         int scoreJoueur1 = plateau.compterPions(joueur1.getCouleur());
@@ -97,7 +104,7 @@ public class BaillemontPerleinMedev {
         BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
         jeu.jouer();
     }
-
+    
     public Plateau getPlateau() {
         return plateau;
     }

@@ -36,7 +36,7 @@ public class PlateauTest {
     }
 
     /**
-     * Test of afficher method, of class Plateau.
+     * Test de la méthode d'affichage.
      */
     @Test
     public void testAfficher() {
@@ -45,6 +45,9 @@ public class PlateauTest {
         instance.afficher();
     }
 
+    /**
+     * Test de l'initialisation du plateau.
+     */
     @Test
     public void testInitialisationPlateau() {
         // Vérifiez que le plateau est initialisé correctement
@@ -56,6 +59,9 @@ public class PlateauTest {
         assertEquals(Pion.VIDE, plateau.getPion(0, 0));
     }
     
+    /**
+     * Test de la méthode getPion().
+     */
     @Test
     public void testGetPion() {
         Plateau plateau = new Plateau();
@@ -65,6 +71,9 @@ public class PlateauTest {
         assertEquals(Pion.VIDE, plateau.getPion(0, 0));
     }
 
+    /**
+     * Test de la méthode compterPions().
+     */
     @Test
     public void testCompterPions() {
         Plateau plateau = new Plateau();
@@ -75,7 +84,10 @@ public class PlateauTest {
         assertEquals(2, scoreNoir); // Vérifiez que le score du joueur noir est correct
         assertEquals(2, scoreBlanc); // Vérifiez que le score du joueur blanc est correct
     }
-
+    
+    /**
+     * Test de la méthode peutJouer(), quand le joueur peut jouer.
+     */
     @Test
     public void testPeutJouer() {
         Plateau plateau = new Plateau();
@@ -83,7 +95,10 @@ public class PlateauTest {
         assertTrue(plateau.peutJouer(Pion.NOIR)); // Le joueur noir doit pouvoir jouer
         assertTrue(plateau.peutJouer(Pion.BLANC)); // Le joueur blanc doit pouvoir jouer
     }
-
+    
+    /**
+     * Test de la méthode peutJouer(), quand le joueur ne peut pas jouer.
+     */
     @Test
     public void testPeutJouerAucunMouvement() {
         Plateau plateau = new Plateau();

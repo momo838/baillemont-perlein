@@ -37,7 +37,7 @@ public class JoueurTest {
     }
 
     /**
-     * Test of getNom method, of class Joueur.
+     * Test de la méthode getNom().
      */
     @Test
     public void testGetNom() {
@@ -49,7 +49,7 @@ public class JoueurTest {
     }
 
     /**
-     * Test of setNom method, of class Joueur.
+     * Test de la méthode setNom().
      */
     @Test
     public void testSetNom() {
@@ -63,7 +63,7 @@ public class JoueurTest {
     }
 
     /**
-     * Test of getCouleur method, of class Joueur.
+     * Test de la méthode getCouleur().
      */
     @Test
     public void testGetCouleur() {
@@ -75,7 +75,7 @@ public class JoueurTest {
     }
 
     /**
-     * Test of setCouleur method, of class Joueur.
+     * Test de la méthode setCouleur().
      */
     @Test
     public void testSetCouleur() {

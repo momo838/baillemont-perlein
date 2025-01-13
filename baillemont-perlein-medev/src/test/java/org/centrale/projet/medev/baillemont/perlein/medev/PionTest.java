@@ -36,6 +36,9 @@ public class PionTest {
     public void tearDown() {
     }
     
+    /**
+     * Test des valeurs des pions.
+     */
     @Test
     public void testEnumPion() {
         assertEquals(Pion.NOIR, Pion.valueOf("NOIR"));

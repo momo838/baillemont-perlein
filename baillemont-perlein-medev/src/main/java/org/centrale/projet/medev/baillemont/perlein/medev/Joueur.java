@@ -7,6 +7,7 @@ package org.centrale.projet.medev.baillemont.perlein.medev;
 /**
  *
  * @author ASUS
+ * Classe Joueur pour gérer la représentation des joueurs.
  */
 public class Joueur {
     

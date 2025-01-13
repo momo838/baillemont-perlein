@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  *
  * @author morga
+ * Tests de la classe de jeu Othello.
  */
 public class BaillemontPerleinMedevTest {
     
@@ -36,6 +37,9 @@ public class BaillemontPerleinMedevTest {
     public void tearDown() {
     }
     
+    /**
+     * Teste l'initialisation du jeu.
+     */
     @Test
     public void testInitialisation() {
         BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
@@ -47,7 +51,9 @@ public class BaillemontPerleinMedevTest {
         assertEquals(jeu.getJoueur1(), jeu.getJoueur_actuel());
     }
 
-    
+    /**
+     * Teste le comptage des pions lors de l'affichage du résultat.
+     */
     @Test
     public void testAffichageResultat() {
         BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
