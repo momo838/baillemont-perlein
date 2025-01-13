@@ -60,4 +60,14 @@ public class BaillemontPerleinMedevTest {
         fail("The test case is a prototype.");
     }
     
+    @Test
+    public void testInitialisation() {
+        BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
+        // Vérifiez que le plateau est initialisé correctement
+        assertNotNull(jeu);
+        assertNotNull(jeu.getPlateau());
+        assertEquals(Pion.NOIR, jeu.getJoueur1().getCouleur());
+        assertEquals(Pion.BLANC, jeu.getJoueur2().getCouleur());
+        assertEquals(jeu.getJoueur1(), jeu.getJoueur_actuel());
+    }
 }
