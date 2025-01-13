@@ -73,5 +73,50 @@ public class Plateau {
      */
     public Pion getPion(int ligne, int colonne) {
         return plateau[ligne][colonne];
+    } 
+    
+    /**
+     * Méthode pour vérifier si un mouvement est valide
+     * @param ligne
+     * @param colonne
+     * @param couleur
+     * @return 
+     */
+    public boolean mouvementValide(int ligne, int colonne, Pion couleur) {
+        if (plateau[ligne][colonne] != Pion.VIDE) {
+            return false; // La case doit être vide
+        }
+
+        Pion couleurAdverse = (couleur == Pion.NOIR) ? Pion.BLANC : Pion.NOIR;
+        boolean valide = false;
+
+        // Vérifiez dans toutes les directions (horizontale, verticale, diagonale)
+        for (int dLigne = -1; dLigne <= 1; dLigne++) {
+            for (int dColonne = -1; dColonne <= 1; dColonne++) {
+                if (dLigne == 0 && dColonne == 0) continue; // Ignorer la direction (0,0)
+
+                int i = ligne + dLigne;
+                int j = colonne + dColonne;
+                boolean trouveAdverse = false;
+
+                while (i >= 0 && i < TAILLE && j >= 0 && j < TAILLE) {
+                    if (plateau[i][j] == couleurAdverse) {
+                        trouveAdverse = true; // On a trouvé un pion adverse
+                    } else if (plateau[i][j] == couleur) {
+                        if (trouveAdverse) {
+                            valide = true; // On a trouvé un alignement valide
+                        }
+                        break; // On sort de la boucle
+                    } else {
+                        break; // On a trouvé une case vide
+                    }
+                    i += dLigne;
+                    j += dColonne;
+                }
+            }
+        }
+
+        return valide;
+    }
 }
-}
+
