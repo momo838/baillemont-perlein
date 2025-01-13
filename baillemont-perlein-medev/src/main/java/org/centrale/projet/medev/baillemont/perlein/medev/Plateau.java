@@ -168,5 +168,22 @@ public class Plateau {
             }
         }
     }
+    
+    /**
+     * Méthode pour compter le nombre de pions d'une couleur.
+     * @param couleur
+     * @return 
+     */
+    public int compterPions(Pion couleur) {
+        int compteur = 0;
+        for (int i = 0; i < TAILLE; i++) {
+            for (int j = 0; j < TAILLE; j++) {
+                if (plateau[i][j] == couleur) {
+                    compteur++;
+                }
+            }
+        }
+        return compteur;
+    }
 }
 
