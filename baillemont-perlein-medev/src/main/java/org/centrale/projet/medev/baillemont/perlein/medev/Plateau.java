@@ -185,5 +185,21 @@ public class Plateau {
         }
         return compteur;
     }
+    
+    /**
+     * Méthode pour vérifier si un joueur peut jouer.
+     * @param couleur
+     * @return 
+     */
+    public boolean peutJouer(Pion couleur) {
+        for (int i = 0; i < TAILLE; i++) {
+            for (int j = 0; j < TAILLE; j++) {
+                if (plateau[i][j] == Pion.VIDE && mouvementValide(i, j, couleur)) {
+                    return true; // Un mouvement valide a été trouvé
+                }
+            }
+        }
+        return false; // Aucun mouvement valide trouvé
+    }
 }
 
