@@ -71,11 +71,30 @@ public class BaillemontPerleinMedev {
             }
         }
         scanner.close();
-
-        //afficher résultat
-}
+        afficherResultat() ;
+        
+        }
     
+    private void afficherResultat() {
+        // Comptez les pions pour chaque joueur
+        int scoreJoueur1 = plateau.compterPions(joueur1.getCouleur());
+        int scoreJoueur2 = plateau.compterPions(joueur2.getCouleur());
+
+        System.out.println("Score de " + joueur1.getNom() + " (NOIR) : " + scoreJoueur1);
+        System.out.println("Score de " + joueur2.getNom() + " (BLANC) : " + scoreJoueur2);
+
+        if (scoreJoueur1 > scoreJoueur2) {
+            System.out.println("Victoire de " + joueur1.getNom());
+        } else if (scoreJoueur2 > scoreJoueur1) {
+            System.out.println("Victoire de " + joueur2.getNom());
+        } else {
+            System.out.println("Match nul");
+        }
+    }
+
+        
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        BaillemontPerleinMedev jeu = new BaillemontPerleinMedev();
+        jeu.jouer();
     }
 }
